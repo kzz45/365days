@@ -47,7 +47,7 @@ func main() {
 	list.Append("a")
 	list.Append("b")
 	list.Append("c")
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 100; i++ {
 		list.Insert(1, "F")
 		fmt.Println(list)
 	}

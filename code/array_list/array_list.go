@@ -32,7 +32,7 @@ func NewArrayList() *ArrayList {
 
 func (list *ArrayList) check_is_full() {
 	if list.TheSize == cap(list.dataStore) {
-		new_dataStore := make([]interface{}, 2*list.TheSize, 2*list.TheSize) // 开辟双倍内存
+		new_dataStore := make([]interface{}, 2*list.TheSize) // 开辟双倍内存
 		copy(new_dataStore, list.dataStore)
 		list.dataStore = new_dataStore
 	}
