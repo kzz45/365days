@@ -41,16 +41,33 @@ import (
 // 	fmt.Println(list)
 // }
 
+// func main5() {
+// 	// 定义接口对象 赋值的对象必须实现接口的所有方法
+// 	var list arraylist.List = arraylist.NewArrayList()
+// 	list.Append("a")
+// 	list.Append("b")
+// 	list.Append("c")
+// 	for i := 0; i < 100; i++ {
+// 		list.Insert(1, "F")
+// 		fmt.Println(list)
+// 	}
+// 	list.Insert(1, "D")
+// 	fmt.Println(list)
+// }
+
 func main() {
-	// 定义接口对象 赋值的对象必须实现接口的所有方法
 	var list arraylist.List = arraylist.NewArrayList()
 	list.Append("a")
 	list.Append("b")
 	list.Append("c")
-	for i := 0; i < 100; i++ {
-		list.Insert(1, "F")
-		fmt.Println(list)
+	list.Append("e")
+	for it := list.Iterator(); it.HasNext(); {
+		item, _ := it.Next()
+		fmt.Println(item)
+
+		if item == "c" {
+			it.Remove()
+		}
 	}
-	list.Insert(1, "D")
 	fmt.Println(list)
 }
